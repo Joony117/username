@@ -10,7 +10,7 @@ INPUT_FILE=${1:-}
 # Check if the file exists
 if [[ -f "$INPUT_FILE" ]]; then
   while read -r line; do
-    if echo "$line" | grep -Eq "^[a-z][0-9a-z_]{2,11}$"; then
+    if echo "$line" | grep -Eq "^[a-z][0-9a-z_]{2,11}$ > /dev/null 2>&1"; then
       echo "$line → Valid username, thank you"
     else
       echo "$line → Invalid username"
@@ -19,7 +19,7 @@ if [[ -f "$INPUT_FILE" ]]; then
 
 elif [[ ! -t 0 ]]; then
   while read -r line; do
-    if echo "$line" | grep -Eq "^[a-z][0-9a-z_]{2,11}$"; then
+    if echo "$line" | grep -Eq "^[a-z][0-9a-z_]{2,11}$" > /dev/null 2>&1; then
       echo "$line → Valid username, thank you"
     else
       echo "$line → Invalid username"
@@ -36,7 +36,7 @@ It must contain at least three but no more than 12 characters"
 
   while true; do
     read -rp "Enter a valid username: " USERNAME
-    if echo "$USERNAME" | grep -Eq "^[a-z][0-9a-z_]{2,11}$"; then
+    if echo "$USERNAME" | grep -Eq "^[a-z][0-9a-z_]{2,11}$" > /dev/null 2>&1; then
       echo "$USERNAME → Valid username, thank you"
       break
     else
