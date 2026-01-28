@@ -66,7 +66,15 @@ used command ./username.sh < user-input to "redirect" which apprantly lets the s
 [had to create a bunch of conditionals to make the code work for all cases(user input + redirection" > input-text" + provided arguement), and also figuring out what INPUT-FILE=${1:-} meant, but other than that i reused the provided code]
 
 ## Resources
-[used ChatGpt to explain what certain lines of code does and used it to list proper syntax i could use.]
+[used ChatGpt to explain grep modifiers.
+used prompts: whats the syntax for grep -Eq "^[0-9]{5}$", if i want to check for digits and uncapped letters only? would [a..z] work?
+
+what is: The grep command with extended regular expressions - The meaning of the -E and -v flags
+
+what is -Eq? explain the E and q in the grep above
+
+if echo "$line" | grep -Eq "^[a-z][0-9a-z_]{2,11}$" > /dev/null 2>&1; then what is this line actually doing? is that | a OR operator ?
+]
 
 ## License
 This project is part of coursework for Chapman University and is intended for educational purposes.
